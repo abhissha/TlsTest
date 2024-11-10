@@ -1,0 +1,23 @@
+group 'com'
+version 'tls'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+    flatDir {
+        dirs("libs")
+    }
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+    compile 'junit:junit:4.12'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+test {
+    useJUnit()
+}
